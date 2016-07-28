@@ -6,7 +6,7 @@ var app = express();
 app.use(cors()); // Using cors to allow cross-origin requests
 
 // Create a db object connected to the Neo4j database
-db = new neo4j('http://app54289480-62P2Al:Q44wSl03CEqJTh4dHndB@app5428948062p2al.sb10.stations.graphenedb.com:24789');
+db = new neo4j(process.env['GRAPHENEDB_URL'] || 'http://localhost:8080/json');
 
 // Create an object to store the database results
 var object = {};
